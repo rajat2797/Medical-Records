@@ -11,8 +11,8 @@ def index(request):
 
 def createUser(request):
 	if request.method == 'POST':
-		username = request.POST["username"]
-		password = request.POST["password"]
+		username = request.POST.get("username")
+		password = request.POST.get("password")
 		d = {}
 		if User.objects.filter(username=username).exists():
 			d["status"] = "fail"
@@ -20,6 +20,7 @@ def createUser(request):
 			return JsonResponse(d)
 		
 		user = User.objects.create(username=username, password=password)
+		u = Userinfo.objects.create(user=user)
 		d["status"] = "success"
 		d["message"] = "Registration Successful"
 		return JsonResponse(d)
@@ -29,8 +30,8 @@ def createUser(request):
 
 def loginUser(request):
 	if request.method=='POST':
-		username = request.POST["username"]
-		password = request.POST["password"]
+		username = request.POST.get("username")
+		password = request.POST.get("password")
 		user = authenticate(username=username, password=password)
 		if user is not None:
 			d = {
@@ -53,11 +54,11 @@ def loginUser(request):
 
 def userProfile(request):
 	if request.method == 'POST':
-		user = request.POST['user']
-		name = request.POST['name']
-		adhaarId = request.POST['adhaarId']
-		gender = request.POST['gender']
-		dob = request.POST['dob']
+		user = request.POST.get("user")
+		name = request.POST.get("name")
+		adhaarId = request.POST.get("adhaarId")
+		gender = request.POST.get("gender")
+		dob = request.POST.get("dob")
 		u = Userinfo.objects.get(user=user)
 		u.name = name
 		u.adhaarId = adhaarId
@@ -71,7 +72,7 @@ def userProfile(request):
 		return JsonResponse(d)
 
 	else:
-		user = request.GET['user']
+		user = request.user
 		u = Userinfo.objects.get(user=user)
 		d = {
 			"status" : "success",
