@@ -25,7 +25,7 @@ SECRET_KEY = '^u^ev&290k8$f@z2cjq8c+qp_^k0t1&r#s!v8=bog47f@co3nd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['medics.herokuapp.com', 'localhost', '192.168.2.7', '192.168.225.1', '192.168.225.115']
+ALLOWED_HOSTS = ['medicsrecords.herokuapp.com', 'localhost', '192.168.2.7', '192.168.225.1', '192.168.225.115']
 
 
 # Application definition
