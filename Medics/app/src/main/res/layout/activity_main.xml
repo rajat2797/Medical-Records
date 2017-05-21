@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rajat.medics.MainActivity">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcview"
+        android:scrollbarStyle="insideInset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:onClick="newFolder"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/addfolder"
+        android:id="@+id/fab" />
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/createFolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:onClick="close"
+            android:layout_marginLeft="320dp"
+            android:padding="1dp"
+            android:src="@drawable/ic_close_red_a700_24dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <EditText
+            android:textAlignment="center"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
+            android:hint="Folder Name"
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="180dp"
+            android:layout_gravity="center_horizontal"
+            android:text="create"
+            android:onClick="create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+</RelativeLayout>

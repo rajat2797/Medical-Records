@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rajat.medics.Profile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter your Name"
+            android:textSize="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/name" />
+
+        <TextView
+            android:textColor="#012a6c"
+            android:textSize="20dp"
+            android:id="@+id/textView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/name"
+            android:text="Date of Birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <DatePicker
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.85"
+            android:scaleY="0.95"
+            android:layout_below="@+id/textView"
+            android:id="@+id/datePicker" />
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/datePicker"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_marginLeft="60dp"
+                android:id="@+id/male"
+                android:text="Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:layout_marginLeft="130dp"
+                android:id="@+id/female"
+                android:text="Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <EditText
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/rg"
+            android:hint="Adhaar No."
+            android:id="@+id/adhaarId"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="submit"
+            android:padding="14dp"
+            android:textSize="20dp"
+            android:text="Submit"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/adhaarId"
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="gotomain"
+            android:padding="14dp"
+            android:textSize="20dp"
+            android:text="Proceed"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/adhaarId"
+            android:id="@+id/proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</ScrollView>

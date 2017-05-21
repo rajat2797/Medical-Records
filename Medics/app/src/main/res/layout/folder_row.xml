@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@mipmap/folderblack"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:padding="15dp"
+        android:textColor="@color/folderColor"
+        android:textStyle="italic"
+        android:typeface="serif"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="25sp"
+        android:text="Folder Name"
+        android:id="@+id/foldername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
